@@ -117,39 +117,39 @@ const reactiveMixin = {
      * If props are shallowly modified, react will render anyway,
      * so atom.reportChanged() should not result in yet another re-render
      */
-    let skipRender = false;
+    // let skipRender = false;
     /**
      * forceUpdate will re-assign this.props. We don't want that to cause a loop,
      * so detect these changes
      */
-    let isForcingUpdate = false;
+    // let isForcingUpdate = false;
 
-    function makePropertyObservableReference(propName) {
-      let valueHolder = this[propName];
-      const atom = new Atom("reactive " + propName);
-      Object.defineProperty(this, propName, {
-          configurable: true, enumerable: true,
-          get: function() {
-            atom.reportObserved();
-            return valueHolder;
-          },
-          set: function set(v) {
-            if (!isForcingUpdate && isObjectShallowModified(valueHolder, v)) {
-              valueHolder = v;
-              skipRender = true;
-              atom.reportChanged();
-              skipRender = false;
-            } else {
-              valueHolder = v;
-            }
-          }
-      })
-    }
+    // function makePropertyObservableReference(propName) {
+    //   let valueHolder = this[propName];
+    //   const atom = new Atom("reactive " + propName);
+    //   Object.defineProperty(this, propName, {
+    //       configurable: true, enumerable: true,
+    //       get: function() {
+    //         atom.reportObserved();
+    //         return valueHolder;
+    //       },
+    //       set: function set(v) {
+    //         if (!isForcingUpdate && isObjectShallowModified(valueHolder, v)) {
+    //           valueHolder = v;
+    //           skipRender = true;
+    //           atom.reportChanged();
+    //           skipRender = false;
+    //         } else {
+    //           valueHolder = v;
+    //         }
+    //       }
+    //   })
+    // }
 
-    // make this.props an observable reference, see #124
-    makePropertyObservableReference.call(this, "props")
-    // make state an observable reference
-    makePropertyObservableReference.call(this, "state")
+    // // make this.props an observable reference, see #124
+    // makePropertyObservableReference.call(this, "props")
+    // // make state an observable reference
+    // makePropertyObservableReference.call(this, "state")
 
     // wire up reactive render
     const baseRender = this.render.bind(this);
@@ -171,12 +171,12 @@ const reactiveMixin = {
             // However, people also claim this migth happen during unit tests..
             let hasError = true;
             try {
-              isForcingUpdate = true;
-              if (!skipRender)
+              // isForcingUpdate = true;
+              // if (!skipRender)
                 React.Component.prototype.forceUpdate.call(this);
               hasError = false;
             } finally {
-              isForcingUpdate = false;
+              // isForcingUpdate = false;
               if (hasError)
                 reaction.dispose();
             }
