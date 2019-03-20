@@ -1,5 +1,9 @@
 # MobX-React Changelog
 
+### Changes in fork
+
+* Do not log warning to console if `shouldComponentUpdate` exists on component
+
 ### 5.4.3
 
 * Fixed [#612](https://github.com/mobxjs/mobx-react/issues/612), `contextType` was hoisted by `inject`, which shouldn't the case.
