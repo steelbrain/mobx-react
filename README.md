@@ -1,9 +1,5 @@
 # mobx-react
 
-[![Build Status](https://travis-ci.org/mobxjs/mobx-react.svg?branch=master)](https://travis-ci.org/mobxjs/mobx-react)
-[![Join the chat at https://gitter.im/mobxjs/mobx](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mobxjs/mobx?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![CDNJS](https://img.shields.io/cdnjs/v/mobx-react.svg)](https://cdnjs.com/libraries/mobx-react)
-
 Package with React component wrapper for combining React with MobX.
 Exports the `observer` decorator and some development utilities.
 For documentation, see the [MobX](https://mobxjs.github.io/mobx) project.

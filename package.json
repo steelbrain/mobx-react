@@ -1,5 +1,5 @@
 {
-  "name": "mobx-react",
+  "name": "@steelbrain/mobx-react",
   "version": "5.4.3",
   "description": "React bindings for MobX. Create fully reactive components.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "typings": "index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mobxjs/mobx-react.git"
+    "url": "https://github.com/steelbrain/mobx-react.git"
   },
   "scripts": {
     "prettier": "prettier --write \"**/*.js\" \"**/*.ts\"",
@@ -22,9 +22,8 @@
   "author": "Michel Weststrate",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mobxjs/mobx/issues"
+    "url": "https://github.com/steelbrain/mobx/issues"
   },
-  "homepage": "https://mobxjs.github.io/mobx",
   "peerDependencies": {
     "mobx": "^4.0.0 || ^5.0.0",
     "react": "^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0"
